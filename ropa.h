@@ -1,10 +1,10 @@
 /*
 Autor: Maria del Pilar Davila Verduzco
 Matrícula: A01708943
-Fecha: Mayo 2022
+Fecha: Junio 2022
 
-Clase Ropa
-Esta clase será la clase padre
+Clase padre llamada Ropa 
+hereda atributos de talla, tipo, sección y el precio mediante polimorfismo
 */
 
 #ifndef ROPA_H
@@ -32,6 +32,7 @@ public:
 		tipo = ti;
 		seccion = sec; 
 	}
+	//Metodos de acceso
 	string getTalla() {
 		return talla;
 	}
@@ -57,5 +58,7 @@ public:
 	string getSeccion() {
 		return seccion;
 	}
+//Funcion precio polimórfica
+	virtual void precio(){}
 };
 #endif

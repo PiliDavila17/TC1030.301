@@ -25,8 +25,11 @@ class Falda : public Ropa {
 
 public://constructor del objeto
 	Falda() {};
-	Falda(string ta, string ti) : Ropa(ta, ti) {};
+	//Falda(string ta, string ti) : Ropa(ta, ti) {};
 	Falda(string ta, string ti, string sec) : Ropa(ta, ti, sec) {};
+	void precio() {
+		cout << "El precio de una falda es de $350" << endl;
+	}
 
 };
 

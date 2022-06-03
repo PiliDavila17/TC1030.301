@@ -21,25 +21,27 @@ using namespace std;
 class Pantalon : public Ropa {
 //Variable que tendrá únicamente esta clase
 private:
-	string epoca;
-
+	string estilo;
+	string tipo;
 //Declaracion de métodos y constructores
 public:
 	Pantalon() {};
-	Pantalon(string ta, string ti, string ep) : Ropa(ta, ti, ep) {
-	};
-	Pantalon(string ta, string ti, string ep, string sec) :Ropa(ta, ti, sec), epoca(ep) {
+	//Pantalon(string ta, string ti, string ep) : Ropa(ta, ti, ep) {
+	//};
+	Pantalon(string ta, string ti, string est, string sec) :Ropa(ta, ti, sec), estilo(est), tipo(ti) {}
 
+	void precio() {
+		cout << "El precio de un pantalon es de $400" << endl;
 	}
-	string getEpoca() {
-		return epoca;
+	string getEstilo() {
+		return estilo;
 	}
-	void setEpoca(string ep);
+	void setEstilo(string es);
 	string to_string();
 };
 
-void Pantalon::setEpoca(string ep) {
-	epoca = ep;
+void Pantalon::setEstilo(string es) {
+	estilo = es;
 };
 
 #endif

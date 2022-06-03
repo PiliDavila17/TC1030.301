@@ -1,9 +1,10 @@
 /*
 Autor: Maria del Pilar Davila Verduzco
 Matrícula: A01708943
-Fecha: Mayo 2022
+Fecha: Junio 2022
 
-Clase Chamarra hija de Ropa
+Clase Chamarra (objeto) 
+adquiere un atributo propio "Material"
 */
 
 #ifndef CHAMARRAS_H_
@@ -20,13 +21,19 @@ private:
 	string material;
 	
 public:
-	Chamarra() {
-	};
+	Chamarra() {}; //Constructor por default
+
+	//Implementacion de sobrecarga
 	Chamarra(string ta, string ti) : Ropa(ta, ti) {	};
 	Chamarra(string ta, string ti, string sec, string ma) :Ropa(ta, ti, sec) {
 		material = ma;
 	}
-	
+
+	//Polimorfismo apuntador a clase Ropa
+	void precio() {
+		cout << "El precio de una chamarra es de $750" << endl;
+	}
+	//Metodos de acceso
 	string getMaterial() {
 		return material;
 	}

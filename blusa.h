@@ -1,9 +1,9 @@
 /*
 Autor: Maria del Pilar Davila Verduzco
 Matrícula: A01708943
-Fecha: mayo 2022
+Fecha: Junio 2022
 
-Clase Blusas
+Clase blusa (objeto)
 */
 
 #ifndef BLUSAS_H_
@@ -20,8 +20,11 @@ class Blusa : public Ropa {
 
 public:
 	Blusa() {};//Constructor
-	Blusa(string ta, string ti) : Ropa(ta, ti) {};
+	//Blusa(string ta, string ti) : Ropa(ta, ti) {};
 	Blusa(string ta, string ti, string sec) : Ropa(ta, ti, sec) {};
+	void precio() {
+		cout << "El precio de una blusa es de $250" << endl;
+	}
 
 };
 
