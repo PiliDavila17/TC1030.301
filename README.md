@@ -20,4 +20,5 @@ El programa solo permite la selección de las prendas e imprime el resultado del
 CORRECCIONES REALIZADAS:
 
 Se añadieron datos en el readme
+
 Se corrigió el error en la linea 242
