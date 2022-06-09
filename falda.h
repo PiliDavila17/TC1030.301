@@ -1,12 +1,9 @@
 /*
 Autor: Maria del Pilar Davila Verduzco
 Matrícula: A01708943
-Fecha: Mayo 2022
+Fecha: Junio 2022
 
-Clase faldas hija de Ropa
-Objetos:
-	talla (CH,M,G,XG)
-	Tipo (corta, larga, midi)
+Objeto Falda de tipo Ropa
 */
 
 
@@ -20,13 +17,14 @@ Objetos:
 
 using namespace std;
 
-//declaracion de la clase
+//Declaracion del objeto Falda
 class Falda : public Ropa {
 
-public://constructor del objeto
-	Falda() {};
-	//Falda(string ta, string ti) : Ropa(ta, ti) {};
+//Declaro los metodos del objeto
+public:
+	Falda() {};//Constructor por default
 	Falda(string ta, string ti, string sec) : Ropa(ta, ti, sec) {};
+
 	void precio() {
 		cout << "El precio de una falda es de $350" << endl;
 	}

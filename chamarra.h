@@ -3,8 +3,7 @@ Autor: Maria del Pilar Davila Verduzco
 Matrícula: A01708943
 Fecha: Junio 2022
 
-Clase Chamarra (objeto) 
-adquiere un atributo propio "Material"
+Objeto Chamarra de tipo Ropa con una variable Material adicional.
 */
 
 #ifndef CHAMARRAS_H_
@@ -16,30 +15,32 @@ adquiere un atributo propio "Material"
 
 using namespace std;
 
+
+//Declaro objeto Chamarra que hereda de Ropa
 class Chamarra : public Ropa{
+
+//Declaro variable
 private:
 	string material;
-	
+
+//Declaro los metodos del objeto
 public:
 	Chamarra() {}; //Constructor por default
 
-	//Implementacion de sobrecarga
+	//Constructor con sobrecarga
 	Chamarra(string ta, string ti) : Ropa(ta, ti) {	};
 	Chamarra(string ta, string ti, string sec, string ma) :Ropa(ta, ti, sec) {
 		material = ma;
 	}
 
-	//Polimorfismo apuntador a clase Ropa
 	void precio() {
 		cout << "El precio de una chamarra es de $750" << endl;
 	}
-	//Metodos de acceso
 	string getMaterial() {
 		return material;
 	}
 	
 	void setMaterial(string ma);
-	string to_string();
 	
 	Chamarra(string ta, string ti, string ma) :Ropa(ta, ti, ma) {
 		material = ma;

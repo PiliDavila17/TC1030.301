@@ -4,8 +4,7 @@ Matrícula: A01708943
 Fecha: mayo 2022
 
 Clase Carrito
-Asociada a todas
-El cliente podra imprimir una lista de lo que compro
+Se encarga de recibir las prendas elegidas por el usuario
 */
 
 

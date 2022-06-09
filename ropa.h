@@ -13,17 +13,20 @@ hereda atributos de talla, tipo, sección y el precio mediante polimorfismo
 #include<iostream>
 
 using namespace std;
-//Declaracion de la clase
+
+//Declaracion de la clase Ropa que es abstracta
 class Ropa {
-//Atributos heredables
+
+//Declaracion de Variables 
 protected:
 	string talla;
 	string tipo;
 	string seccion;
 	
-//Metodos que tendrá el objeto
+//Declaracion de los metodos que tendra el objeto
 public:
 	Ropa() {}; //constructor por default
+
 	//Constructores sobrecarga
 	Ropa(string ta, string ti) {
 	};	
@@ -59,6 +62,6 @@ public:
 		return seccion;
 	}
 //Funcion precio polimórfica
-	virtual void precio(){}
+	virtual void precio() = 0; //Metodo abstracto que sera sobreescrito
 };
 #endif

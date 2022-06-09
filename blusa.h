@@ -3,7 +3,7 @@ Autor: Maria del Pilar Davila Verduzco
 Matrícula: A01708943
 Fecha: Junio 2022
 
-Clase blusa (objeto)
+Objeto Blusa de tipo Ropa
 */
 
 #ifndef BLUSAS_H_
@@ -15,12 +15,14 @@ Clase blusa (objeto)
 using namespace std;
 
 
-//Declaracion de la clase
+//Declaracion de objeto blusa que hereda de Ropa
 class Blusa : public Ropa {
 
+//Declaro los metodos del objeto
 public:
-	Blusa() {};//Constructor
-	//Blusa(string ta, string ti) : Ropa(ta, ti) {};
+	
+	Blusa() {};//Constructor por default
+
 	Blusa(string ta, string ti, string sec) : Ropa(ta, ti, sec) {};
 	void precio() {
 		cout << "El precio de una blusa es de $250" << endl;
