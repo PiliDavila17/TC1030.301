@@ -1,34 +1,32 @@
 /*
-Autor: Maria del Pilar Davila Verduzco
-Matrícula: A01708943
-Fecha: Junio 2022
+ * Autor: Maria del Pilar Davila Verduzco
+ * Matricula: A01708943
+ * Fecha: Junio 2022
+ *
+ * Objeto Falda de tipo Ropa
+ */
 
-Objeto Falda de tipo Ropa
-*/
+#ifndef FALDA_H
+#define FALDA_H
 
+#include "ropa.h"//Biblioteca de metodos de ropa
 
-#ifndef FALDAS_H_
-#define FALDAS_H_
-
-#include "ropa.h"
-
-#include <sstream>
-#include <iostream>
-
-using namespace std;
-
-//Declaracion del objeto Falda
+//Declaro la clase Falda que hereda de Ropa
 class Falda : public Ropa {
-
-//Declaro los metodos del objeto
 public:
-	Falda() {};//Constructor por default
-	Falda(string ta, string ti, string sec) : Ropa(ta, ti, sec) {};
+    // Constructores y metodos
+    Falda() : Ropa(){};
+    Falda(string ta, string ti, string sec, int tot) : Ropa(ta, ti, sec, tot){};
 
-	void precio() {
-		cout << "El precio de una falda es de $350" << endl;
-	}
-
+    // funciones de la clase
+    void muestraDatos()//Muestra los detales del objeto creado
+    {
+        cout << "\nDetalles de la falda" << endl
+             << "Talla: " << talla
+             << "\nTipo: " << tipo
+             << "\nSeccion: " << seccion
+             << endl;
+    }
 };
 
 #endif

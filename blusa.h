@@ -1,33 +1,35 @@
 /*
-Autor: Maria del Pilar Davila Verduzco
-Matrícula: A01708943
-Fecha: Junio 2022
+ * Autor: Maria del Pilar Davila Verduzco
+ * Matricula: A01708943
+ * Fecha: Junio 2022
+ *
+ * Objeto Blusa de tipo Ropa
+ */
 
-Objeto Blusa de tipo Ropa
-*/
+#ifndef BLUSA_H
+#define BLUSA_H
 
-#ifndef BLUSAS_H_
-#define BLUSAS_H_
+#include "ropa.h" //Biblioteca de metodos 
 
-#include <iostream>
-#include "ropa.h"
+//Declaro la clase Blusa que hereda de Ropa
+class Blusa : public Ropa{
 
-using namespace std;
-
-
-//Declaracion de objeto blusa que hereda de Ropa
-class Blusa : public Ropa {
-
-//Declaro los metodos del objeto
+//Constructores y Metodos
 public:
-	
-	Blusa() {};//Constructor por default
+    Blusa() : Ropa(){};//Constructor por default
+    Blusa(string ta, string ti, string sec, int tot)
+        : Ropa(ta, ti, sec, tot){};
 
-	Blusa(string ta, string ti, string sec) : Ropa(ta, ti, sec) {};
-	void precio() {
-		cout << "El precio de una blusa es de $250" << endl;
-	}
+    // Funciones
 
+    void muestraDatos() //Muestra los detalles del objeto
+    {
+        cout << "\nDetalles de la blusa" << endl
+             << "Talla: " << talla
+             << "\nTipo: " << tipo
+             << "\nSeccion: " << seccion
+             << endl;
+    }
 };
 
 #endif

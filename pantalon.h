@@ -1,49 +1,53 @@
 /*
-Autor: Maria del Pilar Davila Verduzco
-Matrícula: A01708943
-Fecha: Junio 2022
+ * Autor: Maria del Pilar Davila Verduzco
+ * Matricula: A01708943
+ * Fecha: Junio 2022
+ *
+ * Objeto Pantalon de tipo Ropa con una variable de Estilo adicional.
+ */
 
-Objeto Pantalon de tipo Ropa con variables de Estilo adicionales.
-*/
+#ifndef PANTALON_H
+#define PANTALON_H
 
+#include "ropa.h"//Biblioteca de los metodos a utilizar
 
-#ifndef PANTALONES_H_
-#define PANTALONES_H_
-#include"ropa.h"
-
-#include <sstream>
-#include <iostream>
-
-using namespace std;
-
-//Declaracion del objeto Pantalon
-class Pantalon : public Ropa {
-
-//Declaracion de variables 
+//Declaro la clase Pantalon que hereda de Ropa
+class Pantalon : public Ropa
+{
 private:
-	string estilo;
-	string tipo;
+    string estilo;
 
 public:
+    // Constructores y metodos del objeto
+    Pantalon() : Ropa(){}; //Constructor por default 
+    Pantalon(string ta, string ti, string sec, string est, int tot)
+        : Ropa(ta, ti, sec, tot)
+    {
+        estilo = est;
+    }
 
-	Pantalon() {};//Constructor por default
-	Pantalon(string ta, string ti, string est, string sec) :Ropa(ta, ti, sec), estilo(est), tipo(ti) {}
+    // Metodos de Acceso
+    string getEstilo()
+    {
+        return estilo;
+    }
 
-	void precio() {
-		cout << "El precio de un pantalon es de $400" << endl;
-	}
+    void setEstilo(string est)
+    {
+        estilo = est;
+    }
 
+    // Funciones
 
-	string getEstilo() {
-		return estilo;
-	}
-
-	void setEstilo(string es);
-
-};
-
-void Pantalon::setEstilo(string es) {
-	estilo = es;
+    void muestraDatos() //Muestra los detalles del objeto que se creo
+    {
+        cout << "\nDetalles del pantalon" << endl
+             << "Talla: " << talla
+             << "\nTipo: " << tipo
+             << "\nSeccion: " << seccion
+             << "\nEstilo: " << estilo
+             << endl;
+    }
 };
 
 #endif

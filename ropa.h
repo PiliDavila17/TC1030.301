@@ -1,67 +1,78 @@
 /*
-Autor: Maria del Pilar Davila Verduzco
-Matrícula: A01708943
-Fecha: Junio 2022
-
-Clase padre llamada Ropa 
-hereda atributos de talla, tipo, sección y el precio mediante polimorfismo
-*/
+ * Autor: Maria del Pilar Davila Verduzco
+ * Matricula: A01708943
+ * Fecha: Junio 2022
+ *
+ * Clase padre de tipo Ropa se encarga de heredar
+ * talla, tipo, seccion y total a las demas clases.
+ *
+ */
 
 #ifndef ROPA_H
 #define ROPA_H
 
-#include<iostream>
-
+#include <string>
 using namespace std;
 
 //Declaracion de la clase Ropa que es abstracta
-class Ropa {
-
-//Declaracion de Variables 
+class Ropa{
+//Declaro variables de instancia
 protected:
-	string talla;
-	string tipo;
-	string seccion;
-	
-//Declaracion de los metodos que tendra el objeto
+    string talla;
+    string tipo;
+    string seccion;
+    int total;
+// Metodos y Constructores del objeto
 public:
-	Ropa() {}; //constructor por default
+    // Constructores
+    Ropa();//Constructor por default
+    Ropa(string ta, string ti, int tot){};
+    Ropa(string ta, string ti, string sec, int tot)
+    {
+        talla = ta;
+        tipo = ti;
+        seccion = sec;
+        total = tot;
+    };
 
-	//Constructores sobrecarga
-	Ropa(string ta, string ti) {
-	};	
-	Ropa(string ta, string ti, string sec) {
-		talla = ta;
-		tipo = ti;
-		seccion = sec; 
-	}
-	//Metodos de acceso
-	string getTalla() {
-		return talla;
-	}
+    // Metodos de Acceso
+    string getTalla()
+    {
+        return talla;
+    }
 
-	string getTipo() {
-		return tipo;
-	}
+    string getTipo()
+    {
+        return tipo;
+    }
 
-	void setTalla(string ta) {
-		talla = ta;
-	}
+    string getSeccion()
+    {
+        return seccion;
+    }
 
-	void setTipo(string ti) {
-		tipo = ti;
-	}
+    int getTotal()
+    {
+        return total;
+    }
 
+    void setTalla(string ta)
+    {
+        talla = ta;
+    }
 
-	void setSeccion(string sec) {
-		seccion = sec;
-	}
-	string to_string();
-	
-	string getSeccion() {
-		return seccion;
-	}
-//Funcion precio polimórfica
-	virtual void precio() = 0; //Metodo abstracto que sera sobreescrito
+    void setTipo(string ti)
+    {
+        tipo = ti;
+    }
+
+    void setSeccion(string sec)
+    {
+        seccion = sec;
+    }
+
+    // Funciones de la clase
+    virtual void muestraDatos() = 0;//Metodo abstracto que sera sobreescrito
 };
+
 #endif

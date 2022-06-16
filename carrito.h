@@ -1,120 +1,98 @@
 /*
-Autor: Maria del Pilar Davila Verduzco
-Matrícula: A01708943
-Fecha: mayo 2022
+ * Autor: Maria del Pilar Davila Verduzco
+ * Matricula: A01708943
+ * Fecha: Junio 2022
+ *
+ * Objeto Carrito, se encarga de recibir los objetos y almacenarlo en listas
+ * para despues imprimir el total de las mismas, mediante polimorfismo
+ */
 
-Clase Carrito
-Se encarga de recibir las prendas elegidas por el usuario
-*/
+#ifndef CARRITO_H
+#define CARRITO_H
 
+#include "ropa.h"
+#include "pantalon.h"
+#include "falda.h"
+#include "chamarra.h"
+#include "blusa.h"
 
-#ifndef _CARRITO_H_
-#define _CARRITO_H_
-
-#include <iostream>
-#include<string>
-
-using namespace std;
-
-#include"blusa.h"
-#include"falda.h"
-#include"pantalon.h"
-#include"chamarra.h"
-#include"ropa.h"
-
-//Declaracion de la clase
-class Carrito {
-//Variables unicas de la clase
+class Carrito
+{
 private:
-	Blusa blusas[10];
-	Falda faldas[10];
-	Pantalon pantalones[10];
-	Chamarra chamarras[10];
-	int pos_blus;
-	int pos_pant;
-	int pos_fal;
-	int pos_cham;
+    Ropa *prendas[1000];
+    int count;
 
-	
-//Metodos y constructores
 public:
-	Carrito() : pos_blus(0), pos_pant(0), pos_fal(0), pos_cham(0) {};
-	void agregaBlusa(Blusa);
-	void agregaPantalon(Pantalon);
-	void agregaFalda(Falda);
-	void agregaCham(Chamarra);
+    Carrito(){};
 
-	int getpos_blus();
-	int getpos_fal();
-	int getpos_pant();
-	int getpos_cham();
-	
+    // Funciones agregan los objetos correspondientes
+    void muestraPrendas();
 
-	Blusa getBlusa(int);
-	Pantalon getPantalon(int);
-	Falda getFalda(int);
-	Chamarra getChamarra(int);
-	
+    void agregaBlusas(string, string, string, int);
+    void agregaPantalon(string, string, string, string, int);
+    void agregaFalda(string, string, string, int);
+    void agregaChamarra(string, string, string, string, int);
+    void agregaChamarra(string, string, int);
+
+    void eliminaPrendas();
+    int calculaTotal();
 };
-//Metodos encargados de agregar información de las clases anteriores
-void Carrito::agregaBlusa(Blusa blus) {
-	if (pos_blus < 10) {
-		blusas[pos_blus] = blus;
-		pos_blus++;
-	}
+
+// Muestra los detalles de los objetos creados
+void Carrito::muestraPrendas()
+{
+    for (int i = 0; i < count; i++)
+        prendas[i]->muestraDatos();
 }
-Blusa Carrito::getBlusa(int i) {
-	return blusas[i];
+//Crea los objetos de cada clase
+void Carrito::agregaBlusas(string ta, string ti, string sec, int tot)
+{
+    prendas[count] = new Blusa(ta, ti, sec, tot);
+    count++;
 }
 
-int Carrito::getpos_blus() {
-	return pos_blus;
+void Carrito::agregaPantalon(string ta, string ti, string sec, string est, int tot)
+{
+    prendas[count] = new Pantalon(ta, ti, sec, est, tot);
+    count++;
 }
 
-void Carrito::agregaPantalon(Pantalon pant) {
-	if (pos_pant < 10) {
-		pantalones[pos_pant] = pant;
-		pos_pant++;
-	}
-
+void Carrito::agregaFalda(string ta, string ti, string sec, int tot)
+{
+    prendas[count] = new Falda(ta, ti, sec, tot);
+    count++;
 }
 
-Pantalon Carrito::getPantalon(int i) {
-	return pantalones[i];
-}
-int Carrito::getpos_pant() {
-	return pos_pant;
-}
-
-void Carrito::agregaFalda(Falda fal) {
-	if (pos_fal < 10) {
-		
-		faldas[pos_fal] = fal;
-		pos_fal++;
-	}
+void Carrito::agregaChamarra(string ta, string ti, string sec, string mat, int tot)
+{
+    prendas[count] = new Chamarra(ta, ti, sec, mat, tot);
+    count++;
 }
 
-Falda Carrito::getFalda(int i) {
-	return faldas[i];
+void Carrito::agregaChamarra(string ta, string ti, int tot)
+{
+    prendas[count] = new Chamarra(ta, ti, tot);
+    count++;
 }
-int Carrito::getpos_fal() {
-	return pos_fal;
-}
+//Elimina las prendas al finalizar el programa
+void Carrito::eliminaPrendas()
+{
+    for (int i = 0; i < count; i++)
+        delete prendas[i];
 
-void Carrito::agregaCham(Chamarra cham) {
-	if (pos_cham < 10) {
-		chamarras[pos_cham] = cham;
-		pos_cham++;
-	}
+    count = 0;
 }
-Chamarra Carrito::getChamarra(int i) {
-	return chamarras[i];
+//Calcula el Total de prendas
+int Carrito::calculaTotal()
+{
+    int total_aux = 0;
+
+    for (int i = 0; i < count; i++)
+    {
+        total_aux += prendas[i]->getTotal();
+    }
+
+    return total_aux;
 }
-
-int Carrito::getpos_cham() {
-	return pos_cham;
-}
-
-
 
 #endif
