@@ -6,6 +6,7 @@ Fecha: Junio 2022
 Tecnologico de Monterrey
 Campus Queretaro
 MATERIA: TC1030
+CARRERA: IRS
 ---
 
 FILTRO TIENDA DE ROPA
