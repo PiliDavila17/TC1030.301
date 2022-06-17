@@ -3,76 +3,39 @@
  * Matricula: A01708943
  * Fecha: Junio 2022
  *
- * Clase padre de tipo Ropa se encarga de heredar
- * talla, tipo, seccion y total a las demas clases.
- *
+ * Objeto Blusa de tipo Ropa
  */
 
-#ifndef ROPA_H
-#define ROPA_H
+#ifndef BLUSA_H
+#define BLUSA_H
+#include<iostream>
+#include "ropa.h" //Biblioteca de metodos 
 
-#include <string>
-using namespace std;
+//Declaro la clase Blusa que hereda de Ropa
+class Blusa : public Ropa{
 
-//Declaracion de la clase Ropa que es abstracta
-class Ropa{
-//Declaro variables de instancia
-protected:
-    string talla;
-    string tipo;
-    string seccion;
-    int total;
-// Metodos y Constructores del objeto
+//Constructores y Metodos
 public:
-    // Constructores
-    Ropa();//Constructor por default
-    Ropa(string ta, string ti, int tot){};
-    Ropa(string ta, string ti, string sec, int tot)
-    {
-        talla = ta;
-        tipo = ti;
-        seccion = sec;
-        total = tot;
-    };
+    Blusa() : Ropa(){};//Constructor por default
+    Blusa(string ta, string ti, string sec, int tot)
+        : Ropa(ta, ti, sec, tot){};
 
-    // Metodos de Acceso
+    void muestraDatos();
 
-    string getTalla()
-    {
-        return talla;
-    }
-    string getTipo()
-    {
-        return tipo;
-    }
-
-    string getSeccion()
-    {
-        return seccion;
-    }
-
-    int getTotal()
-    {
-        return total;
-    }
-
-    void setTalla(string ta)
-    {
-        talla = ta;
-    }
-
-    void setTipo(string ti)
-    {
-        tipo = ti;
-    }
-
-    void setSeccion(string sec)
-    {
-        seccion = sec;
-    }
-
-
-    virtual void muestraDatos() = 0;//Metodo abstracto que sera sobreescrito
 };
+    /* Funciones de la clase
+     * muestraDatos()
+     * Recibe los detalles que el cliente escogio para el objeto blusa
+     * @param talla, tipo, seccion
+     * @return 
+    */
+    void Blusa::muestraDatos(){
+        cout << "\nDetalles de la blusa" << endl
+             << "Talla: " << talla
+             << "\nTipo: " << tipo
+             << "\nSeccion: " << seccion
+             << endl;
+    }
+
 
 #endif
