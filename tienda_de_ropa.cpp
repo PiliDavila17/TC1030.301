@@ -230,4 +230,4 @@ void menu()
     cout << "\n5. Finalizar compra \n6. Imprimir carrito";
     cout << "\n7. Mostrar precios de Tienda ";
     cout << "\n8. Salir --> ";
-}
+} 
