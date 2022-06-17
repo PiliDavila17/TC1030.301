@@ -8,7 +8,7 @@
 
 #ifndef BLUSA_H
 #define BLUSA_H
-
+#include<iostream>
 #include "ropa.h" //Biblioteca de metodos 
 
 //Declaro la clase Blusa que hereda de Ropa
@@ -20,15 +20,16 @@ public:
     Blusa(string ta, string ti, string sec, int tot)
         : Ropa(ta, ti, sec, tot){};
 
+    void muestraDatos();
 
+};
     /* Funciones de la clase
      * muestraDatos()
      * Recibe los detalles que el cliente escogio para el objeto blusa
-     * parametros: talla, tipo, seccion
-     * return los detalles
+     * @param talla, tipo, seccion
+     * @return 
     */
-};
-    void Blusa::muestraDatos{
+    void Blusa::muestraDatos(){
         cout << "\nDetalles de la blusa" << endl
              << "Talla: " << talla
              << "\nTipo: " << tipo
