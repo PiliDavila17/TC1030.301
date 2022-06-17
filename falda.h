@@ -21,9 +21,9 @@ public:
     /* Funciones de la clase
      * muestraDatos()
      * Recibe los detalles que el cliente escogio para el objeto pantalon
-     * parametros: talla, tipo, seccion, estilo
-     * return los detalles
-    */
+     * @param string talla, string, tipo, string seccion, int total
+     * @return
+     */
 };
     void Falda::muestraDatos()
     {
