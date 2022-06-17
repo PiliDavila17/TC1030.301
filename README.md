@@ -26,4 +26,4 @@ CORRECCIONES REALIZADAS:
 
 Se añadieron datos en el readme
 
-Se corrigió el error en la linea 242
+Se corrigió el error en la linea 242, que evitó que se calificaran las subcompetencias de Herencia, Acceso y Sobrecarga SITC0302A
