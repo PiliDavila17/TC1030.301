@@ -20,16 +20,21 @@ public:
     Blusa(string ta, string ti, string sec, int tot)
         : Ropa(ta, ti, sec, tot){};
 
-    // Funciones
 
-    void muestraDatos() //Muestra los detalles del objeto
-    {
+    /* Funciones de la clase
+     * muestraDatos()
+     * Recibe los detalles que el cliente escogio para el objeto blusa
+     * parametros: talla, tipo, seccion
+     * return los detalles
+    */
+};
+    void Blusa::muestraDatos{
         cout << "\nDetalles de la blusa" << endl
              << "Talla: " << talla
              << "\nTipo: " << tipo
              << "\nSeccion: " << seccion
              << endl;
     }
-};
+
 
 #endif

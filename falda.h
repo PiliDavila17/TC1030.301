@@ -18,8 +18,14 @@ public:
     Falda() : Ropa(){};
     Falda(string ta, string ti, string sec, int tot) : Ropa(ta, ti, sec, tot){};
 
-    // funciones de la clase
-    void muestraDatos()//Muestra los detales del objeto creado
+    /* Funciones de la clase
+     * muestraDatos()
+     * Recibe los detalles que el cliente escogio para el objeto pantalon
+     * parametros: talla, tipo, seccion, estilo
+     * return los detalles
+    */
+};
+    void Falda::muestraDatos()
     {
         cout << "\nDetalles de la falda" << endl
              << "Talla: " << talla
@@ -27,6 +33,5 @@ public:
              << "\nSeccion: " << seccion
              << endl;
     }
-};
 
 #endif

@@ -37,10 +37,14 @@ public:
         estilo = est;
     }
 
-    // Funciones
-
-    void muestraDatos() //Muestra los detalles del objeto que se creo
-    {
+    /* Funciones de la clase
+     * muestraDatos()
+     * Recibe los detalles que el cliente escogio para el objeto pantalon
+     * parametros: talla, tipo, seccion, estilo
+     * return los detalles
+    */
+};
+void Pantalon::muestraDatos(){
         cout << "\nDetalles del pantalon" << endl
              << "Talla: " << talla
              << "\nTipo: " << tipo
@@ -48,6 +52,6 @@ public:
              << "\nEstilo: " << estilo
              << endl;
     }
-};
+
 
 #endif

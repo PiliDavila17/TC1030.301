@@ -42,9 +42,14 @@ public:
         material = ma;
     }
 
-    // Funciones
-
-    void muestraDatos()
+    /* Funciones de la clase
+     * muestraDatos()
+     * Recibe los detalles que el cliente escogio para el objeto pantalon
+     * parametros: talla, tipo, seccion, estilo
+     * return los detalles
+     */
+};
+    void Chamarra::muestraDatos()
     {
         cout << "\nDetalles de chamarra" << endl
              << "Talla: " << talla
@@ -53,6 +58,6 @@ public:
              << "\nMaterial: " << material
              << endl;
     }
-};
+
 
 #endif

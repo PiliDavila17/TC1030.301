@@ -25,7 +25,6 @@ private:
 public:
     Carrito(){};
 
-    // Funciones agregan los objetos correspondientes
     void muestraPrendas();
 
     void agregaBlusas(string, string, string, int);
@@ -38,43 +37,70 @@ public:
     int calculaTotal();
 };
 
-// Muestra los detalles de los objetos creados
+/* Funciones de la clase Carrito
+ * muestraPrendas()
+ * recibe las prendas que escogió el cliente
+ * devuelve y muestra las prendas recibidas
+ */
 void Carrito::muestraPrendas()
 {
     for (int i = 0; i < count; i++)
         prendas[i]->muestraDatos();
 }
-//Crea los objetos de cada clase
+
+/* Funciones de la clase Carrito
+ * agregaBlusa() 
+ * Crea objetos tipo Blusa y los guarda en prendas[]
+ * Suma uno al contador de prendas
+ */
 void Carrito::agregaBlusas(string ta, string ti, string sec, int tot)
 {
     prendas[count] = new Blusa(ta, ti, sec, tot);
     count++;
 }
-
+/* Funciones de la clase Carrito
+ * agregaPantalon() 
+ * Crea objetos tipo Pantalon y los guarda en prendas[]
+ * Suma uno al contador de prendas
+ */
 void Carrito::agregaPantalon(string ta, string ti, string sec, string est, int tot)
 {
     prendas[count] = new Pantalon(ta, ti, sec, est, tot);
     count++;
 }
-
+/* Funciones de la clase Carrito
+ * 
+ * Crea objetos tipo Falda y las guarda en prendas[]
+ * Suma uno al contador de prendas
+ */
 void Carrito::agregaFalda(string ta, string ti, string sec, int tot)
 {
     prendas[count] = new Falda(ta, ti, sec, tot);
     count++;
 }
-
+/* Funciones de la clase Carrito
+ * Crea objetos tipo Chamarra (Primer constructor) y las guarda en prendas[]
+ * Suma uno al contador de prendas
+ */
 void Carrito::agregaChamarra(string ta, string ti, string sec, string mat, int tot)
 {
     prendas[count] = new Chamarra(ta, ti, sec, mat, tot);
     count++;
 }
-
+/* Funciones de la clase Carrito
+ * Crea objetos tipo Chamarra(segundo constructor) y las guarda en prendas[]
+ * Suma uno al contador de prendas
+ */
 void Carrito::agregaChamarra(string ta, string ti, int tot)
 {
     prendas[count] = new Chamarra(ta, ti, tot);
     count++;
 }
-//Elimina las prendas al finalizar el programa
+/* Funciones de la clase Carrito
+ * eliminaPrendas()
+ * Elimina las prendas que se ingresaron a prendas[]
+ * Devuelve prendas vacio 
+ */
 void Carrito::eliminaPrendas()
 {
     for (int i = 0; i < count; i++)
@@ -82,7 +108,11 @@ void Carrito::eliminaPrendas()
 
     count = 0;
 }
-//Calcula el Total de prendas
+/* Funciones de la clase Carrito
+ * calculaTotal()
+ * Calcula el total de objetos en prendas[]
+ * Devuelve el total de prendas
+ */
 int Carrito::calculaTotal()
 {
     int total_aux = 0;

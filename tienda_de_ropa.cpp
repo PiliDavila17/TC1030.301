@@ -41,12 +41,11 @@ int main()
     while (running)
     {
         menu();
-
-        /**
-         * Ciclo que se encarga de controlar el input del usuario. 
-         * Referencia: Carlos Salguero (2022).
-         */
-        
+        /* Funcion Menu()
+         * Desoliega un menu de las prendas en la tienda para seleccionar
+         * Recibe los detalles que seran utilizados en cada objeto
+         * Devuelve lo que el usuario solicito
+        */
         while (!(cin >> menu_opt))
         {
             cin.clear();
@@ -57,7 +56,7 @@ int main()
 
         switch (menu_opt){
 
-        case 1: // agrega pantalones
+        case 1: //Agrega Pantalones
             cout << "\nDescriba su pantalon ideal "
                  << "\n(Escriba su opcion con la palabra exacta)" << endl;
 
@@ -105,7 +104,7 @@ int main()
 
             break;
 
-        case 3: // agrega blusas
+        case 3: // Agrega blusas
             cout << "\nDescribe tu blusa ideal"
                  << "\n(Escriba su opcion con la palabra exacta)" << endl;
 
@@ -128,7 +127,7 @@ int main()
 
             break;
 
-        case 4: // agrega chamarra
+        case 4: // Agrega Chamarra
             cout << "\nDescribe tu chamarra ideal"
                  << "\n(Escriba su opcion con la palabra exacta)" << endl;
 

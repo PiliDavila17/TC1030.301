@@ -36,11 +36,11 @@ public:
     };
 
     // Metodos de Acceso
+
     string getTalla()
     {
         return talla;
     }
-
     string getTipo()
     {
         return tipo;
@@ -71,7 +71,7 @@ public:
         seccion = sec;
     }
 
-    // Funciones de la clase
+
     virtual void muestraDatos() = 0;//Metodo abstracto que sera sobreescrito
 };
 
