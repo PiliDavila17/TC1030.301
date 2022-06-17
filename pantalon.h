@@ -8,7 +8,7 @@
 
 #ifndef PANTALON_H
 #define PANTALON_H
-
+#include<iostream>
 #include "ropa.h"//Biblioteca de los metodos a utilizar
 
 //Declaro la clase Pantalon que hereda de Ropa
@@ -37,13 +37,15 @@ public:
         estilo = est;
     }
 
-    /* Funciones de la clase
+ 
+   void muestraDatos();
+};
+   /* Funciones de la clase
      * muestraDatos()
      * Recibe los detalles que el cliente escogio para el objeto pantalon
-     * parametros: talla, tipo, seccion, estilo
-     * return los detalles
+     * @param string talla, string tipo, string seccion, string estilo
+     * @return
     */
-};
 void Pantalon::muestraDatos(){
         cout << "\nDetalles del pantalon" << endl
              << "Talla: " << talla
