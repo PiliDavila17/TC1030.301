@@ -17,15 +17,16 @@ public:
     // Constructores y metodos
     Falda() : Ropa(){};
     Falda(string ta, string ti, string sec, int tot) : Ropa(ta, ti, sec, tot){};
+    void muestraDatos();
 
-    /* Funciones de la clase
+};
+       /* Funciones de la clase
      * muestraDatos()
      * Recibe los detalles que el cliente escogio para el objeto pantalon
-     * parametros: talla, tipo, seccion, estilo
-     * return los detalles
-    */
-};
-    void Falda::muestraDatos()
+     * @param string talla, string, tipo, string seccion, int total
+     * @return
+     */
+     void Falda::muestraDatos()
     {
         cout << "\nDetalles de la falda" << endl
              << "Talla: " << talla
