@@ -24,8 +24,8 @@ public:
     /* Funciones de la clase
      * muestraDatos()
      * Recibe los detalles que el cliente escogio para el objeto blusa
-     * parametros: talla, tipo, seccion
-     * return los detalles
+     * @param talla, tipo, seccion
+     * @return 
     */
 };
     void Blusa::muestraDatos{
