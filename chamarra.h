@@ -8,7 +8,7 @@
 
 #ifndef CHAMARRA_H
 #define CHAMARRA_H
-
+#include<iostream>
 #include "ropa.h" //Biblioteca de metodos Ropa
 
 //Declaro la clase Chamarra que hereda de Ropa
@@ -42,13 +42,14 @@ public:
         material = ma;
     }
 
+  void muestraDatos();
+}; 
     /* Funciones de la clase
      * muestraDatos()
      * Recibe los detalles que el cliente escogio para el objeto pantalon
-     * parametros: talla, tipo, seccion, estilo
-     * return los detalles
+     * @param string talla, string, tipo, string seccion, int total, string material
+     * @return
      */
-};
     void Chamarra::muestraDatos()
     {
         cout << "\nDetalles de chamarra" << endl
@@ -58,6 +59,6 @@ public:
              << "\nMaterial: " << material
              << endl;
     }
-
+    
 
 #endif
