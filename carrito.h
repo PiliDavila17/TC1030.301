@@ -40,8 +40,7 @@ public:
 /* Funciones de la clase Carrito
  * muestraPrendas()
  * recibe las prendas que escogió el cliente
- * @param objetos blusa, pantalon, falda y chamarra
- * @return
+ * devuelve y muestra las prendas recibidas
  */
 void Carrito::muestraPrendas()
 {
@@ -53,8 +52,6 @@ void Carrito::muestraPrendas()
  * agregaBlusa() 
  * Crea objetos tipo Blusa y los guarda en prendas[]
  * Suma uno al contador de prendas
- * @param string talla, string, tipo, string seccion, int total
- * @return
  */
 void Carrito::agregaBlusas(string ta, string ti, string sec, int tot)
 {
@@ -65,8 +62,6 @@ void Carrito::agregaBlusas(string ta, string ti, string sec, int tot)
  * agregaPantalon() 
  * Crea objetos tipo Pantalon y los guarda en prendas[]
  * Suma uno al contador de prendas
- * @param string talla, string, tipo, string seccion, int total, string estilo
- * @return
  */
 void Carrito::agregaPantalon(string ta, string ti, string sec, string est, int tot)
 {
@@ -77,8 +72,6 @@ void Carrito::agregaPantalon(string ta, string ti, string sec, string est, int t
  * 
  * Crea objetos tipo Falda y las guarda en prendas[]
  * Suma uno al contador de prendas
- * @param string talla, string, tipo, string seccion, int total
- * @return
  */
 void Carrito::agregaFalda(string ta, string ti, string sec, int tot)
 {
@@ -88,8 +81,6 @@ void Carrito::agregaFalda(string ta, string ti, string sec, int tot)
 /* Funciones de la clase Carrito
  * Crea objetos tipo Chamarra (Primer constructor) y las guarda en prendas[]
  * Suma uno al contador de prendas
- * @param string talla, string, tipo, string seccion, int total, string material
- * @return
  */
 void Carrito::agregaChamarra(string ta, string ti, string sec, string mat, int tot)
 {
@@ -99,8 +90,6 @@ void Carrito::agregaChamarra(string ta, string ti, string sec, string mat, int t
 /* Funciones de la clase Carrito
  * Crea objetos tipo Chamarra(segundo constructor) y las guarda en prendas[]
  * Suma uno al contador de prendas
- * @param string talla, string, tipo, string seccion, int total
- * @return
  */
 void Carrito::agregaChamarra(string ta, string ti, int tot)
 {
@@ -111,8 +100,6 @@ void Carrito::agregaChamarra(string ta, string ti, int tot)
  * eliminaPrendas()
  * Elimina las prendas que se ingresaron a prendas[]
  * Devuelve prendas vacio 
- * @param objetos 
- * return
  */
 void Carrito::eliminaPrendas()
 {
@@ -124,8 +111,7 @@ void Carrito::eliminaPrendas()
 /* Funciones de la clase Carrito
  * calculaTotal()
  * Calcula el total de objetos en prendas[]
- * @param prendas[]
- * return
+ * Devuelve el total de prendas
  */
 int Carrito::calculaTotal()
 {
